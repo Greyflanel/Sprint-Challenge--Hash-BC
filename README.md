@@ -23,16 +23,26 @@ This sprint challenge is divided up into three parts:  Hash tables coding, block
 ## Interview Questions
 
 Explain in detail the workings of a dynamic array:
+
 * What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
+
+The runtime complexity to access a specific index in a dynamic array is O(1), while the runtime complexity of accessing an arbitrary element is O(n). To add or remove from the  front of a dynamic array, the time complexity is O(n), because all of the elements need to be shifted over. To add or remove from the end of a dynamic array is the amortized time complexity O(1), because resizing is rare enough that it warrants a constant time complexity.
+
 * What is the worse case scenario if you try to extend the storage size of a dynamic array?
 
+The worst case time complexity for resizing a dynamic array is O(n), because it must create a new array, and copy all elements from the old array into the new one.
+
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
- 
+
+A Blockchain is a public ledger of transactions consisting of blocks of data linked together by way of the hash value of the block previous to it. These blocks contain data consisting of the index of the block itself, a timestamp to indicate when the block was created, a list of transactions, a proof used to mine the block, and the cryptographic hash of the previous block.
+
 Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
+
+Proof of work is a concept whereby a miner uses their computational power to solve a random calculation that returns a specific expected value. If a miner derives the proper value, it is then verified by other miners on the network. If the proof is verified, the block is then added to the chain, and the miner receives a reward for their effort and expense. This system  insures that no one can arbitrarily add a block without doing the required work. One vulnerability of a blockchain is that it is open to DDOS attacks, where a bad actor can control more than 51% of the computing power  of the entire network, in order to rewrite the transaction history.
 
 ## Project Set Up
 
-#### [Hash Tables]
+### [Hash Tables]
 
 For the hash tables portion of the sprint challenge, you'll be working through two algorithm problems that are amenable to being solved efficiently using a hash table. You know the drill at this point. Navigate into each exercise's directory, read the instructions for the exercise laid out in the README, implement your solution in the .py skeleton file, then make sure your code passes the tests by running the test script with make tests.
 
@@ -48,10 +58,9 @@ Your goal is to mine at least 16 coins.  Keep in mind that with many people comp
 
 ## Minimum Viable Product
 
-#### [Hash Tables](https://github.com/LambdaSchool/Sprint-Challenge--Hash-BC/tree/master/hashtables)
+### [Hash Tables](https://github.com/LambdaSchool/Sprint-Challenge--Hash-BC/tree/master/hashtables)
 
 #### [Blockchain](https://github.com/LambdaSchool/Sprint-Challenge--Hash-BC/tree/master/blockchain)
-
 
 ### Rubric
 
@@ -64,4 +73,5 @@ Your goal is to mine at least 16 coins.  Keep in mind that with many people comp
 | build a protocol to allow nodes in a blockchain network to communicate to share blocks and determine consensus. | Interview Question | The student fully explains two or fewer of the bulleted items in the solution repo\. | The student fully explains at least 3 of the items in the bulleted list\.                                | The student fully explains 4 or more items from the bulleted list\.           |
 
 ## Grading
+
 The grade for this sprint challenge is the average of the number of points received (points/15)
